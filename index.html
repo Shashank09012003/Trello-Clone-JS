@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Modern Kanban Board</title>
+</head>
+<body>
+    <header class="app-header">
+        <h1>Trello Clone</h1>
+        <p class="subtitle">Organize your tasks efficiently</p>
+    </header>
+
+    <main class="board">
+        <div class="column" id="todo">
+            <div class="column-header">
+                <h2>To Do <span class="task-count" id="todo-count">0</span></h2>
+                <div class="column-progress">
+                    <div class="progress-bar" id="todo-progress"></div>
+                </div>
+            </div>
+            <div class="tasks" id="todo-tasks"></div>
+            <div class="column-footer">
+                <input
+                    type="text"
+                    class="task-input"
+                    id="todo-input"
+                    placeholder="Add a new task..."
+                />
+                <button class="add-task" onclick="addTask('todo')">
+                    <span class="add-icon">+</span>
+                    <span class="button-text">Add Task</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="column" id="doing">
+            <div class="column-header">
+                <h2>In Progress <span class="task-count" id="doing-count">0</span></h2>
+                <div class="column-progress">
+                    <div class="progress-bar" id="doing-progress"></div>
+                </div>
+            </div>
+            <div class="tasks" id="doing-tasks"></div>
+            <div class="column-footer">
+                <input
+                    type="text"
+                    class="task-input"
+                    id="doing-input"
+                    placeholder="Add a new task..."
+                />
+                <button class="add-task" onclick="addTask('doing')">
+                    <span class="add-icon">+</span>
+                    <span class="button-text">Add Task</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="column" id="done">
+            <div class="column-header">
+                <h2>Done <span class="task-count" id="done-count">0</span></h2>
+                <div class="column-progress">
+                    <div class="progress-bar" id="done-progress"></div>
+                </div>
+            </div>
+            <div class="tasks" id="done-tasks"></div>
+            <div class="column-footer">
+                <input
+                    type="text"
+                    class="task-input"
+                    id="done-input"
+                    placeholder="Add a new task..."
+                />
+                <button class="add-task" onclick="addTask('done')">
+                    <span class="add-icon">+</span>
+                    <span class="button-text">Add Task</span>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <div class="context-menu">
+        <ul>
+            <li onclick="editTask()">
+                <span class="menu-icon">✏️</span>
+                Edit
+            </li>
+            <li onclick="deleteTask()">
+                <span class="menu-icon">🗑️</span>
+                Delete
+            </li>
+        </ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
